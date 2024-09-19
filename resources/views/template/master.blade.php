@@ -254,8 +254,12 @@
     <script src="{{asset('Template/dist/js/adminlte.min.js?v=3.2.0')}}"></script>
 
     <script src="{{asset('Template/dist/js/demo.js')}}"></script>
+    <script src="{{asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
-    @yield('script')
+    @yield('scripts')
 
 </body>
 
