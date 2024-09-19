@@ -14,8 +14,8 @@ class PerlpbbmController extends Controller
      */
     public function index()
     {
-        $perlpbbms = Perlpbbm::all();
-        return view('perlpbbms.index', compact('perlpbbms'));
+        $acountings = Perlpbbm::all();
+        return view('acounting.index', compact('acountings'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PerlpbbmController extends Controller
      */
     public function create()
     {
-                return view('perlpbbms.create');
+                return view('acounting.tambahdata');
     }
 
     /**
@@ -64,7 +64,7 @@ class PerlpbbmController extends Controller
         // Perlpbbm::create($request->all());
         // Perlpbbm::create($validated);
 
-        return redirect()->route('perlpbbms.index');
+        return redirect()->route('acounting.index');
     
     }
 

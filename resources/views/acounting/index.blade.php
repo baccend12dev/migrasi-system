@@ -1,14 +1,25 @@
 @extends('template.master')
 
-@section('judul konten')
-Halaman Accounting 
+@section('title halaman')
+Halaman acounting
 @endsection
 
-@section('main')
-    Data acounting
+@section('title main')
+    Data Acounting
 @endsection
 
+@section('navbar-item1')  
+All Data
+@endsection
+@section('navbar-link1',route('acounting.index'))
+
+@section('navbar-item2','Tambah Data LPB')
+
+@section('navbar-link2',route('acounting.tambahlpb'))
+@section('navbar-item3','Data Faktur')
+@section('navbar-link3',route('acounting.fakturpajak'))
 @section('content')
+    <a href="#" class="btn btn-success">create new</a>
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
@@ -30,55 +41,24 @@ Halaman Accounting
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Trident</td>
-        <td>07/07/2020
-        </td>
-        <td>Win 95+</td>
-        <td> 07/07/2020</td>
-        <td>X</td>
-        <td>Trident</td>
-        <td>12
-        </td>
-        <td>500000</td>
-        <td> 4</td>
-        <td>X</td>
-        <td>Trident</td>
-        <td>12
-        </td>
-        <td>500000</td>
-        <td> 4</td>
-        <td>X</td>
-      </tr>
-      
-      
+        @foreach ($acountings as $perlpbbm)
+        <tr>
+            <td>{{ $perlpbbm->NO_LPB }}</td>
+            <td>{{ $perlpbbm->TGL_LPB }}</td>
+            <td>{{ $perlpbbm->NO_LPB2 }}</td>
+            <td>{{ $perlpbbm->TGL_LPB2 }}</td>
+            <td>{{ $perlpbbm->NM_BHN }}</td>
+            <td>{{ $perlpbbm->STN }}</td>
+            <td>{{ $perlpbbm->UNITB }}</td>
+            <td>{{ $perlpbbm->HSATUAN }}</td>
+            <td>{{ $perlpbbm->TOTAL }}</td>
+            <td>{{ $perlpbbm->KP }}</td>
+            <td>{{ $perlpbbm->NO_PO }}</td>
+            <td>{{ $perlpbbm->TGL_PO }}</td>
+            <td>{{ $perlpbbm->KET_VAL }}</td>
+            <td>{{ $perlpbbm->IMP }}</td>
+            <td>{{ $perlpbbm->KET }}</td>
+        </tr>
+        @endforeach
     </table>
-@endsection
-
-@section('script')
-<script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        "responsive": true,
-        "scrollX": true,
-        "paging": true,
-        "lengthChange": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
 @endsection

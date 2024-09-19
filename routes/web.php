@@ -13,19 +13,31 @@
 // routes/web.php
 
 Route::group(['middleware' => ['web']], function () {
-    // Route::get('/perlpbbms', 'PerlpbbmController@index')->name('perlpbbms.index');
-    // Route::get('/perlpbbms/create', 'PerlpbbmController@create')->name('perlpbbms.create');
+    Route::get('/acounting', 'PerlpbbmController@index')->name('acounting.index');
+    Route::get('/acounting/create', 'PerlpbbmController@create')->name('acounting.create');
     // Route::post('/perlpbbms', 'PerlpbbmController@store')->name('perlpbbms.store');
     // Tambahkan rute lain yang diperlukan
-    Route::resource('perlpbbms', PerlpbbmController::class);
+    // Route::resource('acounting', PerlpbbmController::class);
+    Route::get('acounting/tambah-lpb', function () {
+        return view('acounting.tambahlpb');
+    })->name('acounting.tambahlpb');
+    Route::get('acounting/faktur&pajak', function () {
+        return view('acounting.fakturpajak');
+    })->name('acounting.fakturpajak');
+});
+Route::get('/dashboard', function () {
+    return view('template.dashboard');
 });
 Route::get('/', function () {
-    return view('template.master');
+    return view('auth.login');
+});
+Route::get('index2', function () {
+    return view('acounting.welcome');
 });
 
-Route::get('acounting', function () {
-    return view('acounting.index');
-});
+// Route::get('acounting', function () {
+//     return view('acounting.index');
+// });
 Route::get('pembelian', function () {
     return view('pembelian.index');
 });
