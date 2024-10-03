@@ -37,4 +37,8 @@ class Kernel extends ConsoleKernel
     {
         require base_path('routes/console.php');
     }
+    protected $routeMiddleware = [
+        // Middleware lainnya
+        'role' => \App\Http\Middleware\RoleMiddleware::class,
+    ];
 }

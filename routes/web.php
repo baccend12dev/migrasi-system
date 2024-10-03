@@ -24,7 +24,20 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('acounting/faktur&pajak', function () {
         return view('acounting.fakturpajak');
     })->name('acounting.fakturpajak');
+    Route::get('acounting/pembayaran', function () {
+        return view('acounting.pembayaranlpb');
+    })->name('acounting.pembayaranlpb');
+
+    Route::get('pembelian/tambahbeli', function () {
+        return view('pembelian.tambahbeli');
+    })->name('pembelian.tambahbeli');
+
+    Route::get('pembelian/tambah-beli', function () {
+        return view('pembelian.tambahpembelian');
+    })->name('pembelian.tambahpembelian');
+
 });
+
 Route::get('/dashboard', function () {
     return view('template.dashboard');
 });
@@ -40,7 +53,7 @@ Route::get('index2', function () {
 // });
 Route::get('pembelian', function () {
     return view('pembelian.index');
-});
+})->name('pembelian.index');
 
 // Route::get('/perlpbbms', 'PerlpbbmController@index');
 // // Route::get('/perlpbbms/create', 'PerlpbbmController@create');

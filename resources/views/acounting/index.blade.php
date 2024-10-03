@@ -18,6 +18,8 @@ All Data
 @section('navbar-link2',route('acounting.tambahlpb'))
 @section('navbar-item3','Data Faktur')
 @section('navbar-link3',route('acounting.fakturpajak'))
+@section('navbar-item4','Pembayaran')
+@section('navbar-link4',route('acounting.pembayaranlpb'))
 @section('content')
     <a href="#" class="btn btn-success">create new</a>
     <table id="example1" class="table table-bordered table-striped">

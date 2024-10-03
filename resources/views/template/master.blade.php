@@ -9,7 +9,10 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="{{asset('Template/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-
+<!-- Select2 -->
+  {{-- <link rel="stylesheet" href="{{asset('Template/plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Template/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}"> --}}
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('Template/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- DataTables -->
@@ -133,8 +136,13 @@
                         <i class="nav-icon fas fa-copy"></i>
                         <p>@yield('navbar-item3') </p>
                     </a>
-
                 </li>
+                <li class="nav-item">
+                  <a href="@yield('navbar-link4')" class="nav-link">
+                      <i class="nav-icon fas fa-copy"></i>
+                      <p>@yield('navbar-item4') </p>
+                  </a>
+              </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -295,6 +303,9 @@
         format: 'L'
     });
     $('#reservationdate_pajak').datetimepicker({
+        format: 'L'
+    });
+    $('#reservationdate_buktikas').datetimepicker({
         format: 'L'
     });
 });
