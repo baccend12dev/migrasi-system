@@ -29,8 +29,6 @@ class CreatePerlpbbmTable extends Migration
             $table->char('KET_VAL', 45)->nullable();
             $table->char('IMP', 1)->nullable();
             $table->char('KET', 45)->nullable();
-            
-     
         });
     }
 
