@@ -13,11 +13,17 @@
 // routes/web.php
 
 Route::group(['middleware' => ['web']], function () {
+
+
+    
+    Route::get('/ppol', 'PpolController@create')->name('ppol.create');
+    Route::get('/ppol/store', 'PpolController@store')->name('ppol.store');
+
+
     Route::get('/acounting', 'PerlpbbmController@index')->name('acounting.index');
     Route::get('/acounting/create', 'PerlpbbmController@create')->name('acounting.create');
-    // Route::post('/perlpbbms', 'PerlpbbmController@store')->name('perlpbbms.store');
-    // Tambahkan rute lain yang diperlukan
-    // Route::resource('acounting', PerlpbbmController::class);
+
+
     Route::get('acounting/tambah-lpb', function () {
         return view('acounting.tambahlpb');
     })->name('acounting.tambahlpb');
@@ -32,11 +38,17 @@ Route::group(['middleware' => ['web']], function () {
         return view('pembelian.tambahbeli');
     })->name('pembelian.tambahbeli');
 
-    Route::get('pembelian/tambah-beli', function () {
-        return view('pembelian.tambahpembelian');
-    })->name('pembelian.tambahpembelian');
+    Route::get('/pembelian', 'PpolController@index')->name('pembelian.index');
+    Route::post('/pembelian/tambah-data/store', 'PpolController@store')->name('pembelian.store');
+    Route::get('/pembelian/tambahdata', 'PpolController@create')->name('pembelian.tambahdata');
+    Route::get('/pembelian/create', [App\Http\Controllers\PpolController::class, 'create'])->name('pembelian.create');
+    
+
 
 });
+// Route::get('/ppol/create', [PpolController::class, 'create'])->name('ppol.create');
+// Route::post('/ppol/store', [PpolController::class, 'store'])->name('ppol.store');
+
 
 Route::get('/dashboard', function () {
     return view('template.dashboard');
@@ -48,24 +60,15 @@ Route::get('index2', function () {
     return view('acounting.welcome');
 });
 
-// Route::get('acounting', function () {
-//     return view('acounting.index');
-// });
+
 Route::get('pembelian', function () {
     return view('pembelian.index');
 })->name('pembelian.index');
 
-// Route::get('/perlpbbms', 'PerlpbbmController@index');
-// // Route::get('/perlpbbms/create', 'PerlpbbmController@create');
-// Route::get('/perlpbbms/create', [
-//     'as' => 'perlpbbms.create', 
-//     'uses' => 'PerlpbbmController@create'
-// ]);
-// // Route::post('/perlpbbms', 'PerlpbbmController@store');
-// Route::post('/perlpbbms', [
-//     'as' => 'perlpbbms.store', // Nama rute
-//     'uses' => 'PerlpbbmController@store' // Controller dan metode
-// ]);
-// Route::get('/create', 'PerlpbbmController@create');
+// Route::get('/pembelian', 'PpolController@index')->name('pembelian.index');
+// Route::post('/pembelian/tambah-data/store', 'PpolController@store')->name('pembelian.store');
+// Route::get('/pembelian/tambahdata', 'PpolController@create')->name('pembelian.tambahdata');
+// Route::get('/pembelian/create', [App\Http\Controllers\PpolController::class, 'create'])->name('pembelian.create');
 
+// Route::resource('pembelian', PpolController::class);
 

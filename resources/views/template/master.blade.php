@@ -314,12 +314,13 @@
   
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": true, "autoWidth": true,  "scrollX": true,
+      "responsive": true, "lengthChange": true,"autoWidth": false,  "scrollX": true,
       "buttons": ["copy", "csv", "excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "pageLength": 25,
+      "lengthChange": true,
       "searching": false,
       "ordering": true,
       "info": true,

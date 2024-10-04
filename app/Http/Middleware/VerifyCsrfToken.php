@@ -12,6 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+       'ppol/store', // Rute yang ingin dikecualikan dari proteksi CSRF
+        'ppol/*',    
     ];
 }

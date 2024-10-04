@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\PPOL;
+use App\Ppol;
 use Illuminate\Http\Request;
 
 class PPOLController extends Controller
@@ -14,7 +14,8 @@ class PPOLController extends Controller
      */
     public function index()
     {
-        //
+        $ppols = Ppol::all();
+        return view('pembelian.index', compact('ppols'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PPOLController extends Controller
      */
     public function create()
     {
-        //
+        return view('ppol.create');
     }
 
     /**
@@ -35,7 +36,28 @@ class PPOLController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'NO_PO' => 'required|max:11',
+            'TGL_PO' => 'required|date',
+            'NO_SP' => 'required|size:7',
+            'TGL_SP' => 'required|date',
+            'NM_BHN' => 'required|max:45',
+            'STN' => 'required|max:3',
+            'PESAN' => 'required|numeric',
+            'SATUAN' => 'required|numeric',
+            'H_UNIT' => 'required|numeric',
+            'SISA' => 'required|numeric',
+            'KODE_P' => 'required|size:3',
+            'BG' => 'required|size:1',
+            'KET' => 'nullable|max:254',
+            'NO_SPH' => 'required|max:20',
+        ]);
+
+        // Simpan data ke database
+        Ppol::create($request->all());
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('ppol.create')->with('success', 'Data PO berhasil ditambahkan');
     }
 
     /**

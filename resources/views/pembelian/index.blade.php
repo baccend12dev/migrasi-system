@@ -22,44 +22,40 @@ Halaman Pembelian
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th>No_LPB</th>
-        <th>TGL_LPB</th>
-        <th>NO_LPB2</th>
-        <th>TGL_LPB2</th>
-        <th>NM_BHN</th>
-        <th>STN</th>
-        <th>UNITB</th>
-        <th>HSATUAN</th>
-        <th>TOTAL</th>
-        <th>KP</th>
         <th>NO_PO</th>
-        <th>TGL_PO</th>
-        <th>KET_VAL</th>
-        <th>IMP</th>
-        <th>KET</th>    
+        <th>TGL_PO</th>	
+        <th>NO_SP</th>	
+        <th>TGL_SP</th>	
+        <th>NM_BHN</th>	
+        <th>STN	</th>
+        <th>PESAN</th>	
+        <th>SATUAN</th>	
+        <th>H_UNIT</th>	
+        <th>SISA</th>	
+        <th>KODE_P</th>	
+        <th>BG</th>	
+        <th>KET</th>	
+        <th>NO_SPH</th>
       </tr>
       </thead>
       <tbody>
-        {{-- @foreach ($acountings as $perlpbbm)
+        @foreach($ppols as $item)
         <tr>
-            <td>{{ $perlpbbm->NO_LPB }}</td>
-            <td>{{ $perlpbbm->TGL_LPB }}</td>
-            <td>{{ $perlpbbm->NO_LPB2 }}</td>
-            <td>{{ $perlpbbm->TGL_LPB2 }}</td>
-            <td>{{ $perlpbbm->NM_BHN }}</td>
-            <td>{{ $perlpbbm->STN }}</td>
-            <td>{{ $perlpbbm->UNITB }}</td>
-            <td>{{ $perlpbbm->HSATUAN }}</td>
-            <td>{{ $perlpbbm->TOTAL }}</td>
-            <td>{{ $perlpbbm->KP }}</td>
-            <td>{{ $perlpbbm->NO_PO }}</td>
-            <td>{{ $perlpbbm->TGL_PO }}</td>
-            <td>{{ $perlpbbm->KET_VAL }}</td>
-            <td>{{ $perlpbbm->IMP }}</td>
-            <td>{{ $perlpbbm->KET }}</td>
+            <td>{{ $item->NO_PO }}</td>
+            <td>{{ $item->TGL_PO }}</td>
+            <td>{{ $item->NO_SP }}</td>
+            <td>{{ $item->TGL_SP }}</td>
+            <td>{{ $item->NM_BHN }}</td>
+            <td>{{ $item->STN }}</td>
+            <td>{{ $item->PESAN }}</td>
+            <td>{{ $item->SATUAN }}</td>
+            <td>{{ $item->H_UNIT }}</td>
+            <td>{{ $item->SISA }}</td>
+            <td>{{ $item->KODE_P }}</td>
+            <td>{{ $item->BG }}</td>
+            <td>{{ $item->KET }}</td>
+            <td>{{ $item->NO_SPH }}</td>
         </tr>
-        @endforeach --}}
-      
-      
+        @endforeach
     </table>
 @endsection

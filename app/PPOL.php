@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PPOL extends Model
 {  
     
-    protected $table = 'PPOL'; // Tentukan nama tabel
+    protected $table = 'ppol'; // Tentukan nama tabel
     public $timestamps = false; // Nonaktifkan timestamps
     
     protected $fillable = [
